@@ -1,0 +1,1687 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"3d3e4a7ead",applicationID:"175415818"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"3d3e4a7ead","agent":"","transactionName":"bl0DY0dQWRFVBUYMWFcXJ0JbUkMLWwgdFVtYQQRFRh9BC1ERQV9nVVkYUkd2VgF8D0ERWEtBT1BQRQ==","applicationID":"175415818","errorBeacon":"bam.nr-data.net","applicationTime":39}</script>
+<title>Nick's Galactic Arena Championship (GAC) History · SWGOH.GG</title>
+<meta name="description" content="Check out 's GAC History!!!">
+<meta name="keywords" content="Star Wars, Galaxy of Heroes, Star Wars Galaxy of Heroes, SWGOH, Star Wars App, Star Wars Shards, Star Wars Characters">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="//swgoh.gg/static/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="//swgoh.gg/static/favicon.ico" type="image/x-icon" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nick's Galactic Arena Championship (GAC) History · SWGOH.GG" />
+<meta property="og:url" content="https://swgoh.gg/p/146523987/gac-history/" />
+<meta property="og:description" content="Check out 's GAC History!!!" />
+<meta property="og:site_name" content="SWGOH.GG - Star Wars Galaxy of Heroes Database" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@swgohgg" />
+<meta name="twitter:title" content="SWGOH.GG - Star Wars Galaxy of Heroes Database" />
+<meta name="twitter:description" content="Check out 's GAC History!!!" />
+<meta property="og:image" content="//swgoh.gg/static/logos/swgohgg-logo-twitter-profile.png" />
+<meta property="og:image:secure_url" content="//swgoh.gg/static/logos/swgohgg-logo-twitter-profile.png" />
+<meta name="twitter:image" content="//swgoh.gg/static/logos/swgohgg-logo-twitter-profile.png" />
+<meta name="robots" content="noindex">
+<link type="text/css" href="https://s3.amazonaws.com/swgoh-media/css/swgohgg.885042bd.min.css" rel="stylesheet" />
+
+<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5cb447db46e0fb0001f2437d" data-mode="scan" async></script>
+
+</head>
+<body class="with-top-navbar">
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WW22DK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WW22DK');</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=457328674296959";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script>
+  USER = false;
+  </script>
+
+<div class="vm-placement" data-id="5cc8193446e0fb00017bd29e" style="display:none"></div>
+<div class="growl" id="app-growl"></div>
+<nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"></a>
+</div>
+<div class="navbar-collapse collapse" id="navbar-collapse-main">
+<ul class="nav navbar-nav hidden-xs">
+<li class="dropdown">
+<a href="/">Units</a>
+<ul class="dropdown-menu">
+<li>
+<a href="/">Characters</a>
+</li>
+<li>
+<a href="/ships/">Ships</a>
+</li>
+<li>
+<a href="/abilities/">Abilities</a>
+</li>
+<li>
+<a href="/characters/data/g13/">G13 Player Data</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="/stats/players/">Stats</a>
+<ul class="dropdown-menu">
+<li>
+<a href="/stats/players/">Top Players</a>
+</li>
+<li>
+<a href="/stats/top-characters/speed/">Top Characters</a>
+</li>
+<li>
+<a href="/stats/meta-report/">Meta Report</a>
+</li>
+<li>
+<a href="/stats/meta-history/">Meta History</a>
+</li>
+<li>
+<a href="/stats/fleet-meta-report/">Fleet Meta Report</a>
+</li>
+<li>
+<a href="/stats/mod-meta-report/">Mod Meta Report</a>
+</li>
+<li>
+<a href="/stats/ability-report/">Zeta / Omega Report</a>
+</li>
+</ul>
+</li>
+<li class="hidden-sm">
+<a href="/gac/">GAC Meta</a>
+</li>
+<li class="dropdown">
+<a href="/db/gear/">Database</a>
+<ul class="dropdown-menu">
+<li>
+<a href="/galactic-challenges/">Galactic Challenges</a>
+</li>
+<li>
+<a href="/db/gear/">Gear</a>
+</li>
+<li>
+<a href="/db/raids/">Raids</a>
+</li>
+<li>
+<a href="/db/scavenger/">Scavenger</a>
+</li>
+<li>
+<a href="/db/shipments/">Shard Shipments</a>
+</li>
+<li>
+<a href="/db/events/">Events</a>
+</li>
+<li>
+<a href="/db/quests/">Quests</a>
+</li>
+<li>
+<a href="/db/missions/lightside/">Light Side Battles</a>
+</li>
+<li>
+<a href="/db/missions/darkside/">Dark Side Battles</a>
+</li>
+<li>
+<a href="/db/missions/squadcantina/">Squad Cantina Battles</a>
+</li>
+<li>
+<a href="/db/missions/fleet/">Fleet Battles</a>
+</li>
+<li>
+<a href="/db/missions/mods/">Mod Battles</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="/g/">Guilds</a>
+<ul class="dropdown-menu">
+<li>
+<a href="/g/">Leaderboard</a>
+</li>
+<li>
+<a href="/g/activities/">Guild Activities</a>
+</li>
+</ul>
+</li>
+<li class="hidden-sm dropdown ">
+<a href="/news/">News</a>
+<ul class="dropdown-menu">
+<li>
+<a href="/news/">News &amp; Dev Posts</a>
+</li>
+<li>
+<a href="https://www.reddit.com/r/SWGalaxyOfHeroes/" target="_blank">SWGOH Reddit</a>
+</li>
+<li>
+<a href="https://forums.galaxy-of-heroes.starwars.ea.com/" target="_blank">SWGOH EA Forums</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav hidden-sm hidden-md hidden-lg text-center">
+<li>
+<a href="/">Units</a>
+</li>
+<li>
+<a href="/stats/players/">Stats</a>
+</li>
+<li>
+<a href="/gac/">GAC Meta</a>
+</li>
+<li>
+<a href="/db/gear/">Database</a>
+</li>
+<li>
+<a href="/g/">Guilds</a>
+</li>
+<li>
+<a href="/news/">News</a>
+</li>
+<li class="divider"><hr /></li>
+<li>
+<a href="/accounts/login/"><span class="icon icon-login"></span> Log In</a>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right m-r-0 hidden-xs">
+<li class="hidden-xs">
+<a href="/accounts/login/">
+<span class="icon icon-login"></span> Log In
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container p-t-md">
+<div class="row sw-v-row"><script>
+var id = window.screen.width<728 ? '5cc8192d46e0fb0001e163dc' : '5cc8190b46e0fb00010eb657'; document.write('<div class="vm-placement" data-id="'+id+'"><a href="https://www.patreon.com/swgohgg" class="premium">&nbsp;</a></div>');
+</script><a href="https://www.patreon.com/swgohgg" style="display: block; text-align: center; margin: 5px 0; color: #999; font-size: 11px;">Remove Ads</a></div>
+<div class="content-container">
+<div class="content-container-aside">
+<div class="panel panel-default panel-profile m-b-sm hidden-xs">
+<div class="character-card panel-heading no-side"></div>
+<div class="panel-body">
+<h5 class="panel-title text-center m-b-sm">
+Nick
+</h5>
+<ul class="panel-menu text-center">
+<li class="panel-menu-item">
+User #
+<h5 class="m-y-0">383327</h5>
+</li>
+<li class="panel-menu-item">
+Arena Rank
+<h5 class="m-y-0">106</h5>
+</li>
+<li class="panel-menu-item">
+Level
+<h5 class="m-y-0">85</h5>
+</li>
+</ul>
+<p>Guild <strong class="pull-right"><a href="/g/68989/the-senate-ksdagobahks/">THE SENATE ΞDagøbahΞ </a></strong></p>
+<p>Ally Code <strong class="pull-right"><span class="btn-copy" style="text-decoration-line: underline; text-decoration-style: dotted; cursor: pointer;" data-clipboard-text="146-523-987">146-523-987 <span class="icon icon-copy"></span></span></strong></p>
+<p>Joined <strong class="pull-right">Mar 17, 2020</strong></p>
+</div>
+</div>
+<div class="row sw-v-box" style="padding: 10px 0; text-align: center; color: #999; font-size: 11px;">
+ADVERTISEMENT
+<div class="vm-placement" data-id="5cc818ec46e0fb0001212581"><a href="https://www.patreon.com/swgohgg" class="premium">&nbsp;</a></div></div>
+<div class="list-group m-b-sm mobile-nav hidden-xs">
+<a href="/p/146523987/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-man"></span> Profile
+</a>
+<a href="/p/146523987/characters/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-users"></span> Characters
+</a>
+<a href="/p/146523987/squads/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-grid"></span> Squads
+</a>
+<a href="/p/146523987/gac-history/" class="list-group-item active">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-flow-tree"></span> GAC History
+</a>
+<a href="/p/146523987/ships/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-paper-plane"></span> Ships
+</a>
+<a href="/p/146523987/mods/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-hair-cross"></span> Mods
+</a>
+<a href="/p/146523987/zetas/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-star-outlined"></span> Zetas
+</a>
+<a href="/p/146523987/gear-needed/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-laptop"></span> Gear Needed
+</a>
+<a href="/p/146523987/gl-gear-needed/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-laptop"></span> Galactic Legends Gear Needed
+</a>
+<a href="/p/146523987/checklist/events/" class="list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-laptop"></span> Checklist
+</a>
+<a href="/settings/" class="settings-btn hide list-group-item">
+<span class="icon icon-chevron-thin-right pull-right"></span>
+<span class="icon icon-cog"></span> Settings
+</a>
+</div>
+<div class="list-group m-b-sm visible-xs-block">
+<a href="javascript:;" class="list-group-item mobile-nav-handler">
+<span class="icon icon-chevron-thin-down pull-right"></span>
+Player Navigation
+</a>
+</div>
+</div>
+<style>
+        .gac-unit {
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        .gac-unit__bar {
+            background: #555;
+            border: 1px solid #ccc;
+            margin-top: -1px;
+            border-radius: 6px 0 6px 0;
+            box-shadow: 0 0 6px rgba(0,0,0,0.5) inset;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .gac-unit__bar-inner {
+            height: 6px;
+            border-radius: 6px 0 6px 0;
+        }
+
+        .gac-unit__bar-inner--hp {
+            background-color: #16dc19;
+        }
+
+        .gac-unit__bar-inner--hp-low {
+            background-color: #fbff44;
+        }
+
+        .gac-unit__bar-inner--hp-critical {
+            background-color: #de0214;
+        }
+
+        .gac-unit__bar-inner--prot {
+            background-color: #f2f2f2;
+        }
+
+        .gac-unit--dead {
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+
+        .gac-summary {
+            position: relative;
+        }
+        .gac-summary--win {
+            background-color: #d0ecd0;
+            border: 1px solid #7ebf7e;
+        }
+        .gac-summary--loss,
+        .gac-summary--timeout,
+        .gac-summary--quit {
+            background-color: #ffb7b7;
+            border: 1px solid #c37a7a;
+        }
+
+        .gac-summary__status {
+            color: #fff;
+            font-weight: bold;
+            padding: 1px 10px;
+            position: absolute;
+            left: -5px;
+            top: -10px;
+            border-radius: 2px;
+        }
+
+        .gac-summary__status--loss,
+        .gac-summary__status--timeout,
+        .gac-summary__status--quit {
+            background-color: #860000;
+        }
+        .gac-summary__status--win {
+            background-color: green;
+        }
+
+        .panel.active {
+          color: #fff;
+          background-color: #425058;
+        }
+
+        .dropdown-menu {
+          top: 95%;
+        }
+
+        .div-inline {
+          display: inline-block;
+        }
+
+        .winner {
+          color: forestgreen;
+        }
+
+        .loser {
+          color: maroon
+        }
+
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 20px;
+        }
+        dt {
+          width: 50%;
+          text-align: right;
+          padding-right: 10px;
+        }
+        dd {
+          margin-left: auto;
+          width: 50%;
+        }
+    </style>
+<div class="content-container-primary ">
+<ul class="list-group media-list media-list-stream m-t-0">
+<li class="list-group-item gac-meta-sitemessage text-center">
+<p>The SWGOH.GG GAC Meta Report is live!</p>
+<a href="/gac/" class="btn btn-sm btn-default-outline">Check it out!</a>
+</li>
+<li class="list-group-item p-a">
+<span class="header-text">
+<h3 class="m-a-0">
+Nick's GAC History
+</h3>
+</span>
+</li>
+<li class="list-group-item p-a">
+<div class="dropdown div-inline">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdown-class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+09/15/2020
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdown-class">
+<li><a href="?gac=34">09/15/2020</a></li>
+<li><a href="?gac=33">09/08/2020</a></li>
+<li><a href="?gac=32">09/01/2020</a></li>
+</ul>
+</div>
+<div class="dropdown div-inline">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdown-class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+Round 1
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdown-class">
+<li>
+<a href="?gac=34&r=1">
+<span class="icon icon-check"></span> R<span class="hidden-xs">ound</span> 1<span class="hidden-xs"><br />vs Lycettiusmaximus</span>
+</a>
+</li>
+<li>
+<a href="?gac=34&r=2">
+<span class="icon icon-check"></span> R<span class="hidden-xs">ound</span> 2<span class="hidden-xs"><br />vs GreatG10</span>
+</a>
+</li>
+<li>
+<a href="?gac=34&r=3">
+<span class="icon icon-check"></span> R<span class="hidden-xs">ound</span> 3<span class="hidden-xs"><br />vs Torin Woodle</span>
+</a>
+</li>
+</ul>
+</div>
+<span class="header-buttons">
+<button data-toggle="modal" data-target="#statsModal" type="button" class="btn btn-default-outline active">
+<span class="hidden-xs">Event Stats </span><span class="icon icon-line-graph"></span>
+</button>
+</span>
+</li>
+<li class="list-group-item p-a text-center">
+<h5 class="m-a-0">Round 1</h5>
+<h4 style="margin: 5px 0;"><span class="winner">Nick</span> VS <span class="loser">Lycettiusmaximus</span></h4>
+<h5 class="m-a-0">1568 - 550</h5>
+<div class="row" style="margin-top: 10px;">
+<div class="col-xs-6">
+<a href="?gac=34&r=1&a=a" class="btn btn-default-outline active" style="display: block;">Attack</a>
+</div>
+<div class="col-xs-6">
+<a href="?gac=34&r=1&a=d" class="btn btn-default-outline" style="display: block;">Defense</a>
+</div>
+</div>
+</li>
+<li class="list-group-item p-a visible-xs">
+<div class="row sw-v-box mobile"><script>
+if(window.screen.width<728) {
+    document.write('<div class="vm-placement" data-id="5cc818ec46e0fb0001212581"><a href="https://www.patreon.com/swgohgg" class="premium">&nbsp;</a></div>');
+}
+</script></div>
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<strong>Nick</strong> attacks / <strong>Lycettiusmaximus</strong> defense
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default panel-profile p-a gear-panel gear-panel-t12 gac-summary gac-summary--win">
+<div class="gac-summary__status gac-summary__status--win">
+WIN
+</div>
+<div class="pull-left">
+<img class="char-portrait-full-small" src="/game-asset/u/EMPERORPALPATINE/" alt="EMPERORPALPATINE">
+vs
+<img class="char-portrait-full-small " src="/game-asset/u/NUTEGUNRAY/" alt="NUTEGUNRAY">
+</div>
+<div class="media-body">
+<div class="media-body-text">
+<div class="media-heading">
+<h5 style="min-height: 48px;"><br /></h5>
+</div>
+</div>
+</div>
+End: <span class="gac-datetime" data-datetime="1600290429000" data-toggle="tooltip" data-placement="top" data-container="body" title="1600290429000 UTC"></span><br />
+Length: 1:48 - Attempt: 1<br />
+Banners: 58
+</div>
+</div>
+<div class="col-md-8 clearfix">
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/EMPERORPALPATINE/" alt="EMPERORPALPATINE"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/VADER/" alt="VADER"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 98%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/DARTHNIHILUS/" alt="DARTHNIHILUS"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 62%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+ </div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/KYLORENUNMASKED/" alt="KYLORENUNMASKED"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/COUNTDOOKU/" alt="COUNTDOOKU"></div>
+</div>
+</div>
+</div>
+<br /><strong>VS</strong><br />
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/NUTEGUNRAY/" alt="NUTEGUNRAY"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/COUNTDOOKU/" alt="COUNTDOOKU"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/GRIEVOUS/" alt="GRIEVOUS"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/DARTHNIHILUS/" alt="DARTHNIHILUS"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CADBANE/" alt="CADBANE"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default panel-profile p-a gear-panel gear-panel-t12 gac-summary gac-summary--win">
+<div class="gac-summary__status gac-summary__status--win">
+WIN
+</div>
+<div class="pull-left">
+<img class="char-portrait-full-small" src="/game-asset/u/COMMANDERLUKESKYWALKER/" alt="COMMANDERLUKESKYWALKER">
+vs
+<img class="char-portrait-full-small " src="/game-asset/u/MAUL/" alt="MAUL">
+</div>
+<div class="media-body">
+<div class="media-body-text">
+<div class="media-heading">
+<h5 style="min-height: 48px;"><br /></h5>
+</div>
+</div>
+</div>
+End: <span class="gac-datetime" data-datetime="1600290533000" data-toggle="tooltip" data-placement="top" data-container="body" title="1600290533000 UTC"></span><br />
+Length: 1:22 - Attempt: 1<br />
+Banners: 56
+</div>
+</div>
+<div class="col-md-8 clearfix">
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/COMMANDERLUKESKYWALKER/" alt="COMMANDERLUKESKYWALKER"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 92%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/R2D2_LEGENDARY/" alt="R2D2_LEGENDARY"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 65%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/HANSOLO/" alt="HANSOLO"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 41%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/OLDBENKENOBI/" alt="OLDBENKENOBI"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 67%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CHEWBACCALEGENDARY/" alt="CHEWBACCALEGENDARY"></div>
+</div>
+</div>
+</div>
+<br /><strong>VS</strong><br />
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/MAUL/" alt="MAUL"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/LUMINARAUNDULI/" alt="LUMINARAUNDULI"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/ASAJVENTRESS/" alt="ASAJVENTRESS"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/SAVAGEOPRESS/" alt="SAVAGEOPRESS"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/MACEWINDU/" alt="MACEWINDU"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default panel-profile p-a gear-panel gear-panel-t12 gac-summary gac-summary--win">
+<div class="gac-summary__status gac-summary__status--win">
+WIN
+</div>
+<div class="pull-left">
+<img class="char-portrait-full-small" src="/game-asset/u/PADMEAMIDALA/" alt="PADMEAMIDALA">
+vs
+<img class="char-portrait-full-small " src="/game-asset/u/VADER/" alt="VADER">
+</div>
+<div class="media-body">
+<div class="media-body-text">
+<div class="media-heading">
+<h5 style="min-height: 48px;"><br /></h5>
+</div>
+</div>
+</div>
+End: <span class="gac-datetime" data-datetime="1600290642000" data-toggle="tooltip" data-placement="top" data-container="body" title="1600290642000 UTC"></span><br />
+Length: 1:01 - Attempt: 1<br />
+Banners: 58
+</div>
+</div>
+<div class="col-md-8 clearfix">
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/PADMEAMIDALA/" alt="PADMEAMIDALA"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/AHSOKATANO/" alt="AHSOKATANO"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/ANAKINKNIGHT/" alt="ANAKINKNIGHT"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 80%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/GENERALKENOBI/" alt="GENERALKENOBI"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 72%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/MACEWINDU/" alt="MACEWINDU"></div>
+</div>
+</div>
+</div>
+<br /><strong>VS</strong><br />
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/VADER/" alt="VADER"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JANGOFETT/" alt="JANGOFETT"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/PADMEAMIDALA/" alt="PADMEAMIDALA"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/ANAKINKNIGHT/" alt="ANAKINKNIGHT"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/BOBAFETT/" alt="BOBAFETT"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default panel-profile p-a gear-panel gear-panel-t12 gac-summary gac-summary--win">
+<div class="gac-summary__status gac-summary__status--win">
+WIN
+</div>
+<div class="pull-left">
+<img class="char-portrait-full-small" src="/game-asset/u/JEDIKNIGHTREVAN/" alt="JEDIKNIGHTREVAN">
+vs
+<img class="char-portrait-full-small " src="/game-asset/u/GRANDMASTERYODA/" alt="GRANDMASTERYODA">
+</div>
+<div class="media-body">
+<div class="media-body-text">
+<div class="media-heading">
+<h5 style="min-height: 48px;"><br /></h5>
+</div>
+</div>
+</div>
+End: <span class="gac-datetime" data-datetime="1600290745000" data-toggle="tooltip" data-placement="top" data-container="body" title="1600290745000 UTC"></span><br />
+Length: 1:23 - Attempt: 1<br />
+Banners: 61
+</div>
+</div>
+<div class="col-md-8 clearfix">
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JEDIKNIGHTREVAN/" alt="JEDIKNIGHTREVAN"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/GRANDMASTERYODA/" alt="GRANDMASTERYODA"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JOLEEBINDO/" alt="JOLEEBINDO"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/BASTILASHAN/" alt="BASTILASHAN"></div>
+</div>
+</div>
+</div>
+<br /><strong>VS</strong><br />
+<div class="gac-unit gac-unit--dead">
+ <div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/GRANDMASTERYODA/" alt="GRANDMASTERYODA"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/EMPERORPALPATINE/" alt="EMPERORPALPATINE"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/THEMANDALORIAN/" alt="THEMANDALORIAN"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/B1BATTLEDROIDV2/" alt="B1BATTLEDROIDV2"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+ </div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/GENERALKENOBI/" alt="GENERALKENOBI"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default panel-profile p-a gear-panel gear-panel-t12 gac-summary gac-summary--win">
+<div class="gac-summary__status gac-summary__status--win">
+WIN
+</div>
+<div class="pull-left">
+<img class="char-portrait-full-small" src="/game-asset/u/SHAAKTI/" alt="SHAAKTI">
+vs
+<img class="char-portrait-full-small " src="/game-asset/u/PHASMA/" alt="PHASMA">
+</div>
+<div class="media-body">
+<div class="media-body-text">
+<div class="media-heading">
+<h5 style="min-height: 48px;"><br /></h5>
+</div>
+</div>
+</div>
+End: <span class="gac-datetime" data-datetime="1600290842000" data-toggle="tooltip" data-placement="top" data-container="body" title="1600290842000 UTC"></span><br />
+Length: 1:11 - Attempt: 1<br />
+Banners: 60
+</div>
+</div>
+<div class="col-md-8 clearfix">
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 70%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/SHAAKTI/" alt="SHAAKTI"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CT7567/" alt="CT7567"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+ <div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CLONESERGEANTPHASEI/" alt="CLONESERGEANTPHASEI"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CT5555/" alt="CT5555"></div>
+</div>
+</div>
+</div>
+<br /><strong>VS</strong><br />
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/PHASMA/" alt="PHASMA"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/REY/" alt="REY"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/AHSOKATANO/" alt="AHSOKATANO"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/DROIDEKA/" alt="DROIDEKA"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/GRANDMOFFTARKIN/" alt="GRANDMOFFTARKIN"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="gac-player-battles media list-group-item p-a">
+<div class="row">
+<div class="col-md-4">
+<div class="panel panel-default panel-profile p-a gear-panel gear-panel-t12 gac-summary gac-summary--win">
+<div class="gac-summary__status gac-summary__status--win">
+WIN
+</div>
+<div class="pull-left">
+<img class="char-portrait-full-small" src="/game-asset/u/CAPITALJEDICRUISER/" alt="CAPITALJEDICRUISER">
+vs
+<img class="char-portrait-full-small " src="/game-asset/u/CAPITALSTARDESTROYER/" alt="CAPITALSTARDESTROYER">
+</div>
+<div class="media-body">
+<div class="media-body-text">
+<div class="media-heading">
+<h5 style="min-height: 48px;"><br /></h5>
+</div>
+</div>
+</div>
+End: <span class="gac-datetime" data-datetime="1600290909000" data-toggle="tooltip" data-placement="top" data-container="body" title="1600290909000 UTC"></span><br />
+Length: 0:51 - Attempt: 1<br />
+Banners: 78
+</div>
+</div>
+<div class="col-md-8 clearfix">
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+ </div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CAPITALJEDICRUISER/" alt="CAPITALJEDICRUISER"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/HOUNDSTOOTH/" alt="HOUNDSTOOTH"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JEDISTARFIGHTERANAKIN/" alt="JEDISTARFIGHTERANAKIN"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 49%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JEDISTARFIGHTERAHSOKATANO/" alt="JEDISTARFIGHTERAHSOKATANO"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/ARC170CLONESERGEANT/" alt="ARC170CLONESERGEANT"></div>
+</div>
+ </div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/BLADEOFDORIN/" alt="BLADEOFDORIN"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/UMBARANSTARFIGHTER/" alt="UMBARANSTARFIGHTER"></div>
+</div>
+</div>
+</div>
+<br /><strong>VS</strong><br />
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/CAPITALSTARDESTROYER/" alt="CAPITALSTARDESTROYER"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/TIEADVANCED/" alt="TIEADVANCED"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JEDISTARFIGHTERANAKIN/" alt="JEDISTARFIGHTERANAKIN"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit gac-unit--dead">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 0%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp  gac-unit__bar-inner--hp-critical" style="width: 0%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/SLAVE1/" alt="SLAVE1"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/EMPERORSSHUTTLE/" alt="EMPERORSSHUTTLE"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/SITHINFILTRATOR/" alt="SITHINFILTRATOR"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JEDISTARFIGHTERAHSOKATANO/" alt="JEDISTARFIGHTERAHSOKATANO"></div>
+</div>
+</div>
+</div>
+<div class="gac-unit ">
+<div class="gac-unit__bars">
+<div class="gac-unit__bar gac-unit__bar--prot">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--prot" style="width: 100%"></div>
+</div>
+<div class="gac-unit__bar gac-unit__bar--hp">
+<div class="gac-unit__bar-inner gac-unit__bar-inner--hp " style="width: 100%"></div>
+</div>
+</div>
+<div class="gac-unit__portrait">
+<div class="char-portrait char-portrait-xsmall">
+<div class="char-portrait-image"><img class="char-portrait-img" src="/game-asset/u/JEDISTARFIGHTERCONSULAR/" alt="JEDISTARFIGHTERCONSULAR"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="statsModal" class="modal">
+<div class="modal-dialog modal-md">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h3 class="modal-title">Nick's Stats for 09/15/2020 Event</h4>
+</div>
+<div class="modal-body">
+<div class="modal-body-scroller">
+<div class="media-list media-list-users list-group">
+<dl>
+<dt>Total Banners</dt>
+<dd>4699</dd>
+</dl>
+<dl>
+<dt>Average Banners</dt>
+<dd>1566</dd>
+</dl>
+<dl>
+<dt>Wins</dt>
+<dd>18</dd>
+</dl>
+<dl>
+<dt>Losses</dt>
+<dd>0</dd>
+</dl>
+<dl>
+<dt>Defensive Holds</dt>
+<dd>7</dd>
+</dl>
+<dl>
+<dt>Battles Per Win (BPW)</dt>
+<dd>1.0</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row sw-v-row"><script>
+var id = window.screen.width<728 ? '5cc8192d46e0fb0001e163dc' : '5cc8190b46e0fb00010eb657'; document.write('<div class="vm-placement" data-id="'+id+'"><a href="https://www.patreon.com/swgohgg" class="premium">&nbsp;</a></div>');
+</script><a href="https://www.patreon.com/swgohgg" style="display: block; text-align: center; margin: 5px 0; color: #999; font-size: 11px;">Remove Ads</a></div>
+<div class="panel panel-default">
+<div class="panel-body text-center">
+SWGOH.GG is not affiliated with EA, EA Capital Games, Disney or Lucasfilm LTD.<br>
+<a href="/privacy-policy/">Privacy Policy</a>
+|
+<a href="https://github.com/danpaulson/swgoh.gg.public/issues" target="_blank">Public Issue Tracker</a>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.7.1/lazyload.min.js"></script>
+<script type="text/javascript" src="//swgoh.gg/static/CACHE/js/2bf8906b1d7c.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  if(USER.pk == '383327') {
+    $('.owner-actions').removeClass('hide');
+  }
+});
+
+$('.gac-datetime').each(function() {
+  moment().utc();
+  $(this).html(moment($(this).data('datetime')).utc().format('MMM Do YYYY, h:mm:ss a'));
+})
+</script>
+<div id='cdm-zone-end'></div>
+</body>
+</html>
